@@ -1,4 +1,4 @@
-/* 
+/*
 	Arrow Functions
 */
 const square = num => num * num; // Arrow shorthand method
@@ -28,7 +28,7 @@ const obj = {
 	getDoubled() {
 		return this.arr.map(i => i * 2); // Access parent scope directly using 'this'
 	},
-}
+};
 console.log(obj.getDoubled());
 
 
@@ -116,6 +116,55 @@ const stringFn = (string, ...values) => {
 
 const tmpl = stringFn`Its ${new Date().getDate()} ${new Date().getMonth()+1} ${new Date().getFullYear()}`;
 console.log(tmpl);
+
+
+
+/* 
+	Destructuring 
+*/
+const i = {
+	id: 111
+};
+
+let { id } = i;
+console.log(id);
+
+const j = {
+	no: 222
+};
+
+let { no:userId } = j; // Alias to use object property
+console.log(userId);
+
+const getDestructured = (props) => {
+	const { id, name } = props;
+
+	return `Id of ${name} is : ${id}`;
+}
+
+const o = { id: 333, name: 'Test' };
+console.log(getDestructured(o));
+
+const users = ['Dave', 'Erica', 'James', 'Alan'];
+const [destrcutedArray1, destrcutedArray2, , destrcutedArray3] = users; // Destructuring an array
+console.log(destrcutedArray1);
+console.log(destrcutedArray2);
+console.log(destrcutedArray3);
+
+const userList = [{
+	id: 1,
+	email: 'a@a.com'
+}, {
+	id: 2,
+	email: 'b@a.com'
+}, {
+	id: 3,
+	email: 'c@a.com'
+}];
+
+userList.forEach(({ email }) => { // Destructuring array element property
+	console.log(email);
+})
 
 
 

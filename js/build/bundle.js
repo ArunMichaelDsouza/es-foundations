@@ -58,7 +58,7 @@
 
 	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-	/* 
+	/*
 		Arrow Functions
 	*/
 	var square = function square(num) {
@@ -177,6 +177,62 @@
 
 	var tmpl = stringFn(_templateObject, new Date().getDate(), new Date().getMonth() + 1, new Date().getFullYear());
 	console.log(tmpl);
+
+	/* 
+		Destructuring 
+	*/
+	var i = {
+		id: 111
+	};
+
+	var id = i.id;
+
+	console.log(id);
+
+	var j = {
+		no: 222
+	};
+
+	var userId = j.no; // Alias to use object property
+
+	console.log(userId);
+
+	var getDestructured = function getDestructured(props) {
+		var id = props.id,
+		    name = props.name;
+
+
+		return 'Id of ' + name + ' is : ' + id;
+	};
+
+	var o = { id: 333, name: 'Test' };
+	console.log(getDestructured(o));
+
+	var users = ['Dave', 'Erica', 'James', 'Alan'];
+	var destrcutedArray1 = users[0],
+	    destrcutedArray2 = users[1],
+	    destrcutedArray3 = users[3]; // Destructuring an array
+
+	console.log(destrcutedArray1);
+	console.log(destrcutedArray2);
+	console.log(destrcutedArray3);
+
+	var userList = [{
+		id: 1,
+		email: 'a@a.com'
+	}, {
+		id: 2,
+		email: 'b@a.com'
+	}, {
+		id: 3,
+		email: 'c@a.com'
+	}];
+
+	userList.forEach(function (_ref) {
+		var email = _ref.email;
+		// Destructuring array element property
+		console.log(email);
+	});
 
 /***/ }
 /******/ ]);
