@@ -48,9 +48,15 @@
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-	var _console;
+	var _console, _console2;
+
+	var _templateObject = _taggedTemplateLiteral(['Its ', ' ', ' ', ''], ['Its ', ' ', ' ', '']);
+
+	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 	/* 
 		Arrow Functions
@@ -138,6 +144,12 @@
 	};
 	console.log(add.apply(undefined, [1, 2, 3]));
 
+	var data = {
+		id: 11,
+		name: 'User'
+	};
+	(_console2 = console).log.apply(_console2, _toConsumableArray(data));
+
 	var key = 'info',
 	    info = { id: 12, num: 1244 };
 	var userInfo = {
@@ -151,8 +163,20 @@
 		String templates
 	*/
 	var string = 'This is a string';
-	var template = string + '  \n\n\t\tString templates can be multi-line\n';
-	console.log(template);
+	var template = string + '  \n\n\t\tString templates can be multi-line \n';
+	console.log(template); // 
+
+	var evalutate = '10 + 23 = ' + (10 + 23);
+	console.log(evalutate);
+
+	console.log('' + new Date()); // Expressions in string templates
+
+	var stringFn = function stringFn(string) {
+		return '' + string[0] + (arguments.length <= 1 ? undefined : arguments[1]) + '-' + (arguments.length <= 2 ? undefined : arguments[2]) + '-' + (arguments.length <= 3 ? undefined : arguments[3]);
+	};
+
+	var tmpl = stringFn(_templateObject, new Date().getDate(), new Date().getMonth() + 1, new Date().getFullYear());
+	console.log(tmpl);
 
 /***/ }
 /******/ ]);

@@ -79,6 +79,11 @@ console.log(...list); // Spreads out to individual items
 const add = (a, b, c) => a + b + c;
 console.log(add(...[1,2,3]));
 
+const data = {
+	id: 11,
+	name: 'User'
+};
+console.log(...data);
 
 const key = 'info', info = { id: 12, num: 1244 };
 const userInfo = {
@@ -96,10 +101,21 @@ console.log(detail);
 const string = 'This is a string';
 const template = `${string}  
 
-		String templates can be multi-line
+		String templates can be multi-line 
 `;
-console.log(template);
+console.log(template); // 
 
+const evalutate = `10 + 23 = ${ 10 + 23 }`;
+console.log(evalutate);
+
+console.log(`${ new Date() }`); // Expressions in string templates
+
+const stringFn = (string, ...values) => {
+  return `${string[0]}${values[0]}-${values[1]}-${values[2]}`;
+}
+
+const tmpl = stringFn`Its ${new Date().getDate()} ${new Date().getMonth()+1} ${new Date().getFullYear()}`;
+console.log(tmpl);
 
 
 
