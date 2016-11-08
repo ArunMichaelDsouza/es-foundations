@@ -93,5 +93,18 @@ console.log(detail);
 /* 
 	String templates
 */
+const string = 'This is a string';
+const template = `${string}  
+
+		String templates can be multi-line
+`;
+console.log(template);
+
+
+
+
+
+
+
 
 

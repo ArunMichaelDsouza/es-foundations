@@ -150,6 +150,9 @@
 	/* 
 		String templates
 	*/
+	var string = 'This is a string';
+	var template = string + '  \n\n\t\tString templates can be multi-line\n';
+	console.log(template);
 
 /***/ }
 /******/ ]);
