@@ -170,11 +170,14 @@ userList.forEach(({ email }) => { // Destructuring array element property
 /*
 	Modules
 
-	1) modules-object-library
+	2) modules-individual-export
 */
-import math from './modules/math'; // Direct usage
-console.log(math.sum(1,2));
-console.log(math.multiply(1,2));
+import { 
+	sum, 				// Direct usage
+	multiply as mult	// Usage via alias
+} from './modules/math'; 
+console.log(sum(1,2));
+console.log(mult(1,2));
 
 
 

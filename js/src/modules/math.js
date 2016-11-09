@@ -1,8 +1,6 @@
 /* Math operations library */
 
-const math = {
-	sum: (a, b) => a + b,
-	multiply: (a, b) => a * b
-};
+const sum = (a, b) => a + b;
+const multiply = (a, b) => a * b;
 
-export default math;
+export { sum, multiply };

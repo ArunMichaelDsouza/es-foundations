@@ -54,10 +54,6 @@
 
 	var _math = __webpack_require__(1);
 
-	var _math2 = _interopRequireDefault(_math);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -243,11 +239,11 @@
 	/*
 		Modules
 
-		1) modules-object-library
+		2) modules-individual-export
 	*/
-	// Direct usage
-	console.log(_math2.default.sum(1, 2));
-	console.log(_math2.default.multiply(1, 2));
+
+	console.log((0, _math.sum)(1, 2));
+	console.log((0, _math.multiply)(1, 2));
 
 /***/ },
 /* 1 */
@@ -256,20 +252,19 @@
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	  value: true
 	});
 	/* Math operations library */
 
-	var math = {
-		sum: function sum(a, b) {
-			return a + b;
-		},
-		multiply: function multiply(a, b) {
-			return a * b;
-		}
+	var sum = function sum(a, b) {
+	  return a + b;
+	};
+	var multiply = function multiply(a, b) {
+	  return a * b;
 	};
 
-	exports.default = math;
+	exports.sum = sum;
+	exports.multiply = multiply;
 
 /***/ }
 /******/ ]);
