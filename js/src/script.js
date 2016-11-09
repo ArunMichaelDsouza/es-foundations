@@ -50,7 +50,6 @@ console.log(char);
 
 
 
-
 /* 
 	Default parameters
 */
@@ -164,10 +163,19 @@ const userList = [{
 
 userList.forEach(({ email }) => { // Destructuring array element property
 	console.log(email);
-})
+});
 
 
 
+/*
+	Modules
+
+	ES6 Modules implementation is performed in the following branches - 
+	1) modules-object-library
+	2) modules-individual-export
+	3) modules-direct-export
+	4) modules-export-from
+*/
 
 
 
