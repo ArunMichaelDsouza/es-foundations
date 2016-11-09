@@ -42,7 +42,7 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -51,6 +51,12 @@
 	var _console, _console2;
 
 	var _templateObject = _taggedTemplateLiteral(['Its ', ' ', ' ', ''], ['Its ', ' ', ' ', '']);
+
+	var _math = __webpack_require__(1);
+
+	var _math2 = _interopRequireDefault(_math);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -237,12 +243,33 @@
 	/*
 		Modules
 
-		ES6 Modules implementation is performed in the following branches - 
 		1) modules-object-library
-		2) modules-individual-export
-		3) modules-direct-export
-		4) modules-export-from
 	*/
+	// Direct usage
+	console.log(_math2.default.sum(1, 2));
+	console.log(_math2.default.multiply(1, 2));
+
+/***/ },
+/* 1 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	/* Math operations library */
+
+	var math = {
+		sum: function sum(a, b) {
+			return a + b;
+		},
+		multiply: function multiply(a, b) {
+			return a * b;
+		}
+	};
+
+	exports.default = math;
 
 /***/ }
 /******/ ]);

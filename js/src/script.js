@@ -170,12 +170,11 @@ userList.forEach(({ email }) => { // Destructuring array element property
 /*
 	Modules
 
-	ES6 Modules implementation is performed in the following branches - 
 	1) modules-object-library
-	2) modules-individual-export
-	3) modules-direct-export
-	4) modules-export-from
 */
+import math from './modules/math'; // Direct usage
+console.log(math.sum(1,2));
+console.log(math.multiply(1,2));
 
 
 
