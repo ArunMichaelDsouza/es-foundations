@@ -52,7 +52,11 @@
 
 	var _templateObject = _taggedTemplateLiteral(['Its ', ' ', ' ', ''], ['Its ', ' ', ' ', '']);
 
-	var _math = __webpack_require__(1);
+	var _index = __webpack_require__(1);
+
+	var _index2 = _interopRequireDefault(_index);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -241,12 +245,39 @@
 
 		3) modules-direct-export
 	*/
-
-	console.log((0, _math.sum)(1, 2));
-	console.log((0, _math.multiply)(1, 2));
+	// Custom import default object and selected function from module
+	console.log(_index2.default.sum(1, 2));
+	console.log((0, _index.sub)(1, 2));
 
 /***/ },
 /* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.sub = undefined;
+
+	var _lib = __webpack_require__(2);
+
+	var addMul = _interopRequireWildcard(_lib);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	var sub = exports.sub = function sub(a, b) {
+	  return a - b;
+	};
+
+	//export div form './div';
+
+	/* Math library entry point */
+
+	exports.default = addMul;
+
+/***/ },
+/* 2 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -254,14 +285,17 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	/* Math operations library */
+	/* Math library functions */
 
-	var sum = exports.sum = function sum(a, b) {
+	var sum = function sum(a, b) {
 	  return a + b;
 	};
-	var multiply = exports.multiply = function multiply(a, b) {
+	var multiply = function multiply(a, b) {
 	  return a * b;
 	};
+
+	exports.sum = sum;
+	exports.multiply = multiply;
 
 /***/ }
 /******/ ]);
