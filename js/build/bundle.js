@@ -248,6 +248,7 @@
 	// Custom import default object and selected function from module
 	console.log(_index2.default.sum(1, 2));
 	console.log((0, _index.sub)(1, 2));
+	console.log((0, _index.div)(1, 2));
 
 /***/ },
 /* 1 */
@@ -258,7 +259,16 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.sub = undefined;
+	exports.div = exports.sub = undefined;
+
+	var _div = __webpack_require__(3);
+
+	Object.defineProperty(exports, 'div', {
+	  enumerable: true,
+	  get: function get() {
+	    return _div.div;
+	  }
+	});
 
 	var _lib = __webpack_require__(2);
 
@@ -268,11 +278,7 @@
 
 	var sub = exports.sub = function sub(a, b) {
 	  return a - b;
-	};
-
-	//export div form './div';
-
-	/* Math library entry point */
+	}; /* Math library entry point */
 
 	exports.default = addMul;
 
@@ -296,6 +302,23 @@
 
 	exports.sum = sum;
 	exports.multiply = multiply;
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	/* Math library division function */
+
+	var div = function div(a, b) {
+	  return a / b;
+	};
+
+	exports.div = div;
 
 /***/ }
 /******/ ]);

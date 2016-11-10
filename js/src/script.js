@@ -172,9 +172,10 @@ userList.forEach(({ email }) => { // Destructuring array element property
 
 	3) modules-direct-export
 */
-import addMul, { sub } from './modules/math/index'; // Custom import default object and selected function from module
+import addMul, { sub, div } from './modules/math/index'; // Custom import default object and selected function from module
 console.log(addMul.sum(1,2));
 console.log(sub(1,2));
+console.log(div(1,2));
 
 
 
