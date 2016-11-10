@@ -239,7 +239,7 @@
 	/*
 		Modules
 
-		2) modules-individual-export
+		3) modules-direct-export
 	*/
 
 	console.log((0, _math.sum)(1, 2));
@@ -256,15 +256,12 @@
 	});
 	/* Math operations library */
 
-	var sum = function sum(a, b) {
+	var sum = exports.sum = function sum(a, b) {
 	  return a + b;
 	};
-	var multiply = function multiply(a, b) {
+	var multiply = exports.multiply = function multiply(a, b) {
 	  return a * b;
 	};
-
-	exports.sum = sum;
-	exports.multiply = multiply;
 
 /***/ }
 /******/ ]);
