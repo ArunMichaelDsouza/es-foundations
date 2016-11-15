@@ -244,5 +244,9 @@
 		4) modules-export-from
 	*/
 
+	/* 
+		Array.from 
+	*/
+
 /***/ }
 /******/ ]);

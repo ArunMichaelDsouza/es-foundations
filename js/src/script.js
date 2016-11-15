@@ -179,5 +179,9 @@ userList.forEach(({ email }) => { // Destructuring array element property
 
 
 
+/* 
+	Array.from 
+*/
+
 
 
