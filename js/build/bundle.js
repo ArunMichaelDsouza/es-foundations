@@ -254,5 +254,20 @@
 		item.innerHTML < 10 ? item.style.color = 'red' : '';
 	});
 
+	/*
+		ES6 Promises 
+	*/
+	var asyncOperation = new Promise(function (resolve, reject) {
+		setTimeout(function () {
+			resolve();
+		}, 2000);
+	});
+
+	asyncOperation.then(function () {
+		console.log('Promise resolved');
+	}).catch(function () {
+		console.log('Promise rejected');
+	});
+
 /***/ }
 /******/ ]);

@@ -190,3 +190,21 @@ listItemsArray.forEach(function(item) {
 });	
 
 
+
+/*
+	ES6 Promises 
+*/
+const asyncOperation = new Promise((resolve, reject) => {
+	setTimeout(() => {
+		resolve();
+	}, 2000);
+});
+
+asyncOperation
+.then(() => {
+	console.log('Promise resolved');
+})
+.catch(() => {
+	console.log('Promise rejected');
+});
+
