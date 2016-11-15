@@ -247,6 +247,12 @@
 	/* 
 		Array.from 
 	*/
+	var listItems = document.querySelectorAll('li'),
+	    listItemsArray = Array.from(listItems);
+
+	listItemsArray.forEach(function (item) {
+		item.innerHTML < 10 ? item.style.color = 'red' : '';
+	});
 
 /***/ }
 /******/ ]);

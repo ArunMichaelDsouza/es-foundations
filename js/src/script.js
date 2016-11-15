@@ -182,6 +182,11 @@ userList.forEach(({ email }) => { // Destructuring array element property
 /* 
 	Array.from 
 */
+const listItems = document.querySelectorAll('li'),
+	listItemsArray = Array.from(listItems);
 
+listItemsArray.forEach(function(item) {
+	item.innerHTML < 10 ? item.style.color = 'red' : '';
+});	
 
 
