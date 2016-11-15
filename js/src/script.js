@@ -245,5 +245,22 @@ console.log(newMap.get(mapId));
 
 
 /*
-	ES6 WeakMap
+	ES6 WeakMaps
 */
+const weakMap = new WeakMap(), 
+	wkobj = {};
+weakMap.set(wkobj, 213456); // No primitive types allowed as keys
+console.log(weakMap.get(wkobj));
+//console.log(weakMap.entries()); // Not available as weakmaps are immutable
+
+
+
+
+
+
+
+
+
+
+
+
