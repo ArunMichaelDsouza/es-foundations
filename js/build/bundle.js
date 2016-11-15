@@ -243,7 +243,7 @@
 	/*
 		Modules
 
-		3) modules-direct-export
+		4) modules-export-from
 	*/
 	// Custom import default object and selected function from module
 	console.log(_index2.default.sum(1, 2));
@@ -261,7 +261,7 @@
 	});
 	exports.div = exports.sub = undefined;
 
-	var _div = __webpack_require__(3);
+	var _div = __webpack_require__(2);
 
 	Object.defineProperty(exports, 'div', {
 	  enumerable: true,
@@ -270,7 +270,7 @@
 	  }
 	});
 
-	var _lib = __webpack_require__(2);
+	var _lib = __webpack_require__(3);
 
 	var addMul = _interopRequireWildcard(_lib);
 
@@ -291,6 +291,23 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	/* Math library division function */
+
+	var div = function div(a, b) {
+	  return a / b;
+	};
+
+	exports.div = div;
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 	/* Math library functions */
 
 	var sum = function sum(a, b) {
@@ -302,23 +319,6 @@
 
 	exports.sum = sum;
 	exports.multiply = multiply;
-
-/***/ },
-/* 3 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	/* Math library division function */
-
-	var div = function div(a, b) {
-	  return a / b;
-	};
-
-	exports.div = div;
 
 /***/ }
 /******/ ]);
