@@ -183,7 +183,7 @@ userList.forEach(({ email }) => { // Destructuring array element property
 	Array.from 
 */
 const listItems = document.querySelectorAll('li'),
-	listItemsArray = Array.from(listItems);
+	listItemsArray = Array.from(listItems); // Convert nodelist to array
 
 listItemsArray.forEach(function(item) {
 	item.innerHTML < 10 ? item.style.color = 'red' : '';
@@ -200,6 +200,7 @@ const asyncOperation = new Promise((resolve, reject) => {
 	}, 2000);
 });
 
+// Async operation result to be obtained here
 asyncOperation
 .then(() => {
 	console.log('Promise resolved');
@@ -208,3 +209,41 @@ asyncOperation
 	console.log('Promise rejected');
 });
 
+
+
+/* 
+	ES6 Maps
+*/
+const map = new Map();
+map.set('id', 12432);
+map.set('type', 'user');
+console.log(map);
+console.log(map.get('id'));
+console.log(map.size);
+
+map.clear();
+console.log(map);
+
+map.set('id', 12432);
+map.set('type', 'user');
+console.log(map.has('id'));
+
+console.log(map.entries()); // Map iterators
+console.log(map.keys());
+console.log(map.values());
+
+for(var [mapKey, mapValue] of map.entries()) { // For of implementation
+	console.log(`${mapKey} : ${mapValue}`);
+}
+
+const mapId = 'id',
+	newMap = new Map();
+
+newMap.set(mapId, 66534); // Set primitives as map keys i.e. string, number etc.
+console.log(newMap.get(mapId));
+
+
+
+/*
+	ES6 WeakMap
+*/

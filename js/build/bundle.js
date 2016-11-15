@@ -46,6 +46,8 @@
 
 	'use strict';
 
+	var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 	var _console, _console2;
@@ -248,7 +250,7 @@
 		Array.from 
 	*/
 	var listItems = document.querySelectorAll('li'),
-	    listItemsArray = Array.from(listItems);
+	    listItemsArray = Array.from(listItems); // Convert nodelist to array
 
 	listItemsArray.forEach(function (item) {
 		item.innerHTML < 10 ? item.style.color = 'red' : '';
@@ -263,11 +265,71 @@
 		}, 2000);
 	});
 
+	// Async operation result to be obtained here
 	asyncOperation.then(function () {
 		console.log('Promise resolved');
 	}).catch(function () {
 		console.log('Promise rejected');
 	});
+
+	/* 
+		ES6 Maps
+	*/
+	var map = new Map();
+	map.set('id', 12432);
+	map.set('type', 'user');
+	console.log(map);
+	console.log(map.get('id'));
+	console.log(map.size);
+
+	map.clear();
+	console.log(map);
+
+	map.set('id', 12432);
+	map.set('type', 'user');
+	console.log(map.has('id'));
+
+	console.log(map.entries()); // Map iterators
+	console.log(map.keys());
+	console.log(map.values());
+
+	var _iteratorNormalCompletion = true;
+	var _didIteratorError = false;
+	var _iteratorError = undefined;
+
+	try {
+		for (var _iterator = map.entries()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+			var _step$value = _slicedToArray(_step.value, 2),
+			    mapKey = _step$value[0],
+			    mapValue = _step$value[1];
+
+			// For of implementation
+			console.log(mapKey + ' : ' + mapValue);
+		}
+	} catch (err) {
+		_didIteratorError = true;
+		_iteratorError = err;
+	} finally {
+		try {
+			if (!_iteratorNormalCompletion && _iterator.return) {
+				_iterator.return();
+			}
+		} finally {
+			if (_didIteratorError) {
+				throw _iteratorError;
+			}
+		}
+	}
+
+	var mapId = 'id',
+	    newMap = new Map();
+
+	newMap.set(mapId, 66534); // Set primitives as map keys i.e. string, number etc.
+	console.log(newMap.get(mapId));
+
+	/*
+		ES6 WeakMap
+	*/
 
 /***/ }
 /******/ ]);
