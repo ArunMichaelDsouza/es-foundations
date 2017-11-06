@@ -1,2 +1,2 @@
-# es6-foundations
-Playing around with ES6
+# es-foundations
+Playing around with ECMAScript - ES6, ES8
